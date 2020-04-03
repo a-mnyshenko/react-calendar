@@ -76,12 +76,22 @@ const CalendarLayout = () => {
               title: "event 1",
               date: "2020-04-03",
               start: "2020-04-03T10:30:00",
-              end: "2020-04-03T10:30:00",
+              end: "2020-04-04T07:30:00",
               allDay: false,
               editable: true,
               notes: "some note",
+              resourceEditable: false,
             },
-            { title: "event 2", date: "2020-04-03" },
+            {
+              title: "event 2",
+              date: "2020-04-03",
+              start: "2020-04-03",
+              end: "2020-04-04",
+              allDay: true,
+              editable: true,
+              notes: "some note",
+              resourceEditable: false,
+            },
           ]}
         />
       </div>
