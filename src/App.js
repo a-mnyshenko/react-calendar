@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Aside from "./components/Aside/Layout";
+import Header from "./components/Header/Layout";
+import Routes from "./routes/Routes";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Aside />
+      <Header />
+      <main
+        style={{
+          display: "block",
+          position: "absolute",
+          width: "calc(100% - 260px - 75px - 95px)",
+          left: "260px",
+          top: "70px",
+          paddingTop: "32px",
+          paddingLeft: "75px",
+          paddingRight: "95px",
+          paddingBottom: "103px",
+          // background: "#F0F0F7",
+        }}>
+        <Routes />
+      </main>
     </div>
   );
 }

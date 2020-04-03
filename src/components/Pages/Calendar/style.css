@@ -1,0 +1,131 @@
+.fc-button {
+  border: 1px solid #d7dae2;
+  background: transparent;
+  background-color: transparent;
+  color: #4d4f5c;
+  font-weight: 300;
+}
+.fc table {
+  font-size: 15px;
+}
+.fc-other-month {
+  color: #43425d;
+}
+.fc-day-top {
+  color: #43425d;
+}
+.fc-right .fc-button-group {
+  margin-top: -90px;
+}
+hr {
+  display: none;
+}
+.fc-timeGrid-view .fc-day-grid .fc-row {
+  border-bottom: 1px solid #eaf0f4;
+  min-height: 49px;
+
+  /* min-height: 4rem; */
+}
+.fc-ltr .fc-axis {
+  padding: 1px 20px;
+  min-height: 49px;
+  /* height: 49px; */
+  text-align: center;
+}
+.fc-axis {
+  min-width: 80px !important;
+}
+.fc .fc-axis {
+  vertical-align: top;
+  /* min-height: 49px;
+  height: 49px; */
+}
+.fc .fc-axis span {
+  display: inline-block;
+  font-weight: 300;
+  transform: translateY(16px);
+  -webkit-transform: translateY(16px);
+  -moz-transform: translateY(16px);
+  -ms-transform: translateY(16px);
+  -o-transform: translateY(16px);
+}
+
+.fc-time-grid .fc-slats .fc-minor td {
+  border-top-style: none;
+}
+.fc-unthemed td.fc-today {
+  border-color: #eaf0f4;
+  background: #f5f6fa;
+}
+.fc-button:focus,
+.fc-button:active .fc-button-primary:focus {
+  outline: none;
+}
+.fc-button-primary:not(:disabled):active:focus,
+.fc-button-primary:not(:disabled).fc-button-active:focus {
+  box-shadow: none;
+}
+.fc-button-primary:hover {
+  color: #3b86ff;
+  background: rgb(67, 66, 93);
+  /* border-color: #1a252fz */
+}
+.fc-button-primary:not(:disabled):active,
+.fc-button-primary:not(:disabled).fc-button-active {
+  border-color: #d7dae2;
+}
+.fc-button-primary:not(:disabled):active,
+.fc-button-primary:not(:disabled).fc-button-active {
+  color: #3b86ff;
+  background-color: transparent;
+  border-color: #d7dae2;
+}
+.fc-today-button {
+  width: 69px;
+  border: 1px solid #d7dae2;
+  color: #000;
+  background: transparent;
+  background-color: transparent;
+}
+.fc-today-button:active {
+  color: #3b86ff;
+}
+.fc-button:disabled {
+  opacity: 1;
+}
+.fc-button-primary:disabled {
+  border: 1px solid #d7dae2;
+  color: #00000050;
+  background: transparent;
+  background-color: transparent;
+}
+
+.fc-prev-button {
+  width: 58px;
+}
+.fc-next-button {
+  width: 67px;
+}
+
+.fc-center h2 {
+  font-weight: 300;
+  color: #4d4f5c;
+  font-size: 23px;
+}
+
+.fc-day-header {
+  color: #a3a6b4;
+  font-size: 11px;
+  height: 45px;
+  border-color: transparent;
+  text-transform: uppercase;
+}
+.fc th {
+  vertical-align: middle;
+  border: none;
+  border: 1px solid #eaf0f4;
+  background: #f0f0f7;
+}
+.fc-unthemed td {
+  border: 1px solid #eaf0f4;
+}
