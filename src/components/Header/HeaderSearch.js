@@ -4,7 +4,7 @@ import searchIcon from "../../assets/icon_search.svg";
 export const HeaderSearch = () => (
   <>
     <label
-      for='search-input'
+      htmlFor='search-input'
       style={{ paddingLeft: "20px", paddingRight: "10px" }}>
       <img src={searchIcon} alt='' />
     </label>

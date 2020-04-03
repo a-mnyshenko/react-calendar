@@ -35,10 +35,14 @@ hr {
 .fc-axis {
   min-width: 80px !important;
 }
+tr {
+  max-height: 49px !important;
+}
+.fc-timeGrid-view .fc-day-grid .fc-row .fc-content-skeleton {
+  padding-bottom: 0;
+}
 .fc .fc-axis {
   vertical-align: top;
-  /* min-height: 49px;
-  height: 49px; */
 }
 .fc .fc-axis span {
   display: inline-block;
@@ -128,4 +132,17 @@ hr {
 }
 .fc-unthemed td {
   border: 1px solid #eaf0f4;
+}
+
+.fc-event {
+  background-color: #3b86ff;
+}
+.fc-content .fc-title {
+  font-size: 13px;
+  padding-left: 14px;
+  line-height: 1.8;
+}
+.fc-time-grid-event.fc-short .fc-title {
+  font-size: 13px;
+  padding-left: 14px;
 }
