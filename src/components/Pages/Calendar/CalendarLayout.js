@@ -8,6 +8,7 @@ import listPlugin from "@fullcalendar/list";
 import "@fullcalendar/core/main.css";
 import "@fullcalendar/daygrid/main.css";
 import "@fullcalendar/timegrid/main.css";
+import "@fullcalendar/list/main.css";
 
 import "./style.css";
 
@@ -42,10 +43,9 @@ const CalendarLayout = () => {
           Calendar View
         </h2>
         <FullCalendar
-          aspectRatio='1.35'
           dateClick={handleAddEvent}
           eventClick={handleShowEvent}
-          displayEventTime={false}
+          displayEventTime={true}
           slotLabelFormat={[
             { month: "long", year: "numeric" }, // top level of text
             { hour: "numeric", minute: "2-digit" }, // lower level of text
@@ -73,26 +73,34 @@ const CalendarLayout = () => {
           ]}
           events={[
             {
-              title: "event 1",
-              date: "2020-04-03",
+              title: "My custom event",
+              // date: "2020-04-03T10:30:00",
               start: "2020-04-03T10:30:00",
-              end: "2020-04-04T07:30:00",
-              allDay: false,
+              // end: "2020-04-04T07:30:00",
+              backgroundColor: "#000",
+              borderColor: "#000",
+              allDay: true,
               editable: true,
-              notes: "some note",
-              resourceEditable: false,
+              extentedProps: {
+                status: "done",
+              },
+              description: "This is a cool eventsome note",
+              // resourceEditable: false,
             },
             {
               title: "event 2",
-              date: "2020-04-03",
+              // date: "2020-04-03",
               start: "2020-04-03",
               end: "2020-04-04",
               allDay: true,
               editable: true,
               notes: "some note",
-              resourceEditable: false,
+              backgroundColor: "black",
+              borderColor: "black",
+              // resourceEditable: false,
             },
           ]}
+          nowIndicator={true}
         />
       </div>
     </div>
