@@ -26,6 +26,42 @@ hr {
 
   /* min-height: 4rem; */
 }
+td.fc-list-item-description.fc-widget-content {
+  position: relative;
+}
+
+.fc-list-item .fc-list-item-time,
+.fc-list-item .fc-list-item-marker,
+.fc-list-item .fc-list-item-title,
+.fc-list-item .fc-list-item-description {
+  overflow: hidden;
+  border: none;
+}
+.fc-list-item .fc-list-item-time {
+  min-width: 110px;
+  max-width: 110px;
+}
+.fc-list-item .fc-list-item-marker {
+  min-width: 16px;
+  max-width: 16px;
+  padding-right: 0;
+}
+.fc-list-item .fc-list-item-title {
+  min-width: 268px;
+  max-width: 268px;
+}
+.fc-list-item .fc-list-item-description {
+  width: 100%;
+}
+
+.fc-list-item .fc-list-item-time:hover,
+.fc-list-item .fc-list-item-marker:hover,
+.fc-list-item .fc-list-item-title:hover,
+.fc-list-item .fc-list-item-description:hover {
+  background: none;
+  box-shadow: none;
+  border: none;
+}
 .fc-ltr .fc-axis {
   padding: 1px 20px;
   min-height: 49px;
@@ -38,50 +74,21 @@ hr {
 .fc-content .fc-time {
   display: none;
 }
-/* .fc-list-item-marker {
-  align-items: center;
-  padding: 2px;
+
+/* td.fc-day:hover {
+  box-shadow: 0px 0px 6px #00000029;
+  border: 1px solid #eaf0f4;
+} */
+td.fc-widget-content:hover {
+  box-shadow: 0px 0px 6px #00000029;
+  border: 1px solid #eaf0f4;
 }
-tr.fc-list-item {
-  display: flex;
-  padding: 4px;
-  min-width: 100%;
-}
-td.fc-list-item-time {
-  display: flex;
-  padding: 4px;
-  min-width: 140px;
-} */
-/* td.fc-list-item-title {
-  display: flex;
-  padding: 4px;
-  min-width: 100%;
-} */
-/* td.fc-list-item-marker {
-  display: block;
-  width: 16px;
-  padding: 4px;
-} */
-/* span.fc-event-dot {
-  display: block;
-  margin: auto 0;
-  border-radius: 50%;
-  width: 16px;
-  height: 16px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-} */
-/* tr {
-  max-height: 49px !important;
-} */
 
 .fc-list-view {
   border: none;
 }
 .fc-ltr .fc-list-item-marker {
-  padding-right: 14px;
+  padding-right: 0;
 }
 .fc-list-heading td {
   font-weight: 300;
@@ -194,6 +201,9 @@ tr.fc-list-item {
   font-weight: 300;
   color: #4d4f5c;
   font-size: 23px;
+}
+.fc-unthemed td {
+  position: relative;
 }
 
 .fc-day-header {

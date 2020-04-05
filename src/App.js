@@ -13,13 +13,12 @@ function App() {
           display: "block",
           position: "absolute",
           width: "calc(100% - 260px - 75px - 95px)",
+          height: "calc(100% - 103px)",
           left: "260px",
           top: "70px",
           paddingTop: "32px",
           paddingLeft: "75px",
           paddingRight: "95px",
-          paddingBottom: "103px",
-          // background: "#F0F0F7",
         }}>
         <Routes />
       </main>
