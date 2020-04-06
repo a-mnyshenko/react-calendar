@@ -1,7 +1,7 @@
-export const addEvent = (name, date, end, notes) => {
-  console.log("aha", name);
+export const addEvent = (data) => {
+  console.log("New event data", data);
   return {
     type: "ADD_EVENT",
-    data: { name, date, end, notes },
+    data,
   };
 };

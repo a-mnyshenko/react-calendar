@@ -5,6 +5,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
+import momentPlugin from "@fullcalendar/moment";
 
 import { events } from "./events";
 
@@ -18,7 +19,7 @@ import "./style.css";
 const Calendar = (props) => {
   return (
     <FullCalendar
-      dateClick={props.showPopup}
+      dateClick={(e) => e.view.type === "dayGridMonth" && props.showPopup(e)}
       eventClick={function(info) {
         console.log("Event: " + info.event.title);
         console.log("Notes: " + info.event.extendedProps.description);
@@ -30,9 +31,14 @@ const Calendar = (props) => {
       }}
       displayEventTime={true}
       slotLabelFormat={[
-        { month: "long", year: "numeric" }, // top level of text
-        { hour: "numeric", minute: "2-digit" }, // lower level of text
+        { month: "long", year: "numeric" },
+        { hour: "numeric", minute: "2-digit" },
       ]}
+      eventTimeFormat={{
+        hour: "2-digit",
+        minute: "2-digit",
+        meridiem: true,
+      }}
       defaultView='dayGridMonth'
       buttonText={{
         today: "Today",
@@ -48,7 +54,13 @@ const Calendar = (props) => {
         center: "title",
         right: "dayGridMonth,timeGridWeek,timeGridDay,listWeek",
       }}
-      plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin]}
+      plugins={[
+        momentPlugin,
+        dayGridPlugin,
+        timeGridPlugin,
+        interactionPlugin,
+        listPlugin,
+      ]}
       // selectable={true}
       events={events}
       nowIndicator={true}
@@ -56,24 +68,12 @@ const Calendar = (props) => {
         if (list.view.type === "listWeek") {
           list.el.style.display = "flex";
           list.el.style.flexDirection = "row";
-
-          // console.log("gotha");
-          // var toInject = [];
-          // toInject.push(list.event.extendedProps.description);
-          // for (var i = 0; i < toInject.length; i++) {
           list.el.innerHTML += list.event.extendedProps.description
             ? `<td class="fc-list-item-description fc-widget-content">
               ${list.event.extendedProps.description}
               </td>`
             : `<td class="fc-list-item-description fc-widget-content"></td>`;
-          // }
         }
-
-        // if (nodes.length) {
-        //   const el = document.createElement("td");
-        //   el.innerHTML = "123454321";
-        //   nodes[0].append(el);
-        // }
       }}
     />
   );

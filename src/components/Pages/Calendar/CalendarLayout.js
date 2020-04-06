@@ -6,6 +6,10 @@ import NewEvent from "./NewEvent";
 const CalendarLayout = () => {
   const [displayPopup, changeDisplayPopup] = useState(false);
   const [cell, setCell] = useState({});
+  const [coords, setCoords] = useState({
+    x: window.scrollX,
+    y: window.scrollY,
+  });
 
   const showPopup = (date) => {
     changeDisplayPopup(!displayPopup);
@@ -16,7 +20,8 @@ const CalendarLayout = () => {
     <div
       style={{
         position: "absolute",
-        width: "calc(100% - 95px - 75px)",
+        width: "calc(100% - 95px)",
+        paddingRight: "95px",
         paddingBottom: "103px",
       }}>
       <h1 style={{ fontWeight: "400", color: "#43425D", fontSize: "28px" }}>
@@ -30,13 +35,19 @@ const CalendarLayout = () => {
           background: "#fff",
           boxShadow: "0px 2px 6px #0000000A",
           minWidth: "640px",
-          maxWidth: "1100px",
+          maxWidth: "1170px",
           width: "calc(100% - 40px)",
         }}>
         <h2 style={{ color: "#4D4F5C", fontWeight: "400", marginTop: "0" }}>
           Calendar View
         </h2>
-        {displayPopup && <NewEvent coords={cell} />}
+        {displayPopup && (
+          <NewEvent
+            displayPopup={displayPopup}
+            event={cell}
+            showPopup={showPopup}
+          />
+        )}
         <Calendar showPopup={showPopup} />
       </div>
     </div>
