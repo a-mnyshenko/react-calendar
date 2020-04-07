@@ -7,7 +7,7 @@ import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
 import momentPlugin from "@fullcalendar/moment";
 
-import { events } from "./events";
+import { events } from "./mock/events";
 
 import "@fullcalendar/core/main.css";
 import "@fullcalendar/daygrid/main.css";

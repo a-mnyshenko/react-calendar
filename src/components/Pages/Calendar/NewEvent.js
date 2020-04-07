@@ -5,7 +5,7 @@ import EventColorPicker from "./EventColorPicker";
 
 import moment from "moment";
 
-import { inputFields } from "./inputFields";
+import { inputFields } from "./mock/inputFields";
 import { addEvent } from "../../../store/actions/calendar";
 
 const NewEvent = (props) => {
@@ -32,7 +32,7 @@ const NewEvent = (props) => {
       allDay: true,
       description: "",
     });
-  }, []);
+  }, [props.event.date, props.event.title, props.event.dateStr]);
 
   const handleCreateEvent = () => {
     props.create({
@@ -40,6 +40,7 @@ const NewEvent = (props) => {
       start: event.start,
       end: event.end,
     });
+    props.showPopup({});
   };
 
   const handleBackgroundPick = (e) => {

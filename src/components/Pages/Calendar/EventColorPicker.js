@@ -1,5 +1,5 @@
 import React from "react";
-import { eventColors } from "./inputFields";
+import { eventColors } from "./mock/inputFields";
 
 const EventColorPicker = (props) => {
   return eventColors.map((color) => (

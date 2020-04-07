@@ -26,8 +26,12 @@ hr {
 
   /* min-height: 4rem; */
 }
-td.fc-list-item-description.fc-widget-content {
+
+.fc .fc-row .fc-content-skeleton table,
+.fc .fc-row .fc-content-skeleton td,
+.fc .fc-row .fc-mirror-skeleton td.fc-list-item-description.fc-widget-content {
   position: relative;
+  /* width: 10px; */
 }
 
 .fc-list-item .fc-list-item-time,
