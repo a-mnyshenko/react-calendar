@@ -25,12 +25,16 @@ const NewEvent = (props) => {
   };
 
   useEffect(() => {
+    console.log(props);
     props.event?.event
       ? setEvent({
           _id: props.event?.event?.extendedProps?._id,
           title: props.event?.event?.title,
-          start: moment(props.event?.event?.start),
-          end: moment(props.event?.event?.start),
+          start: moment(props.event?.event?.start).format(),
+          end: moment(
+            props.event?.event?.end || props.event?.event?.start,
+          ).format(),
+          editable: true,
           backgroundColor: props.event?.event?.backgroundColor,
           description: props.event?.event?.extendedProps?.description,
         })
@@ -41,11 +45,12 @@ const NewEvent = (props) => {
             .set("hour", 13)
             .set("minute", 0)
             .format(),
-          end: moment(props.event?.event?.start)
+          end: moment(props.event.date)
             .set("hour", 13)
             .set("minute", 0)
             .add(1, "h")
             .format(),
+          editable: true,
           backgroundColor: props.event?.backgroundColor || "#blue",
           description: props.event?.extendedProps?.description || "",
         });
