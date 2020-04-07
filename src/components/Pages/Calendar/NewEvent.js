@@ -62,6 +62,7 @@ const NewEvent = (props) => {
         });
     // });
   }, [
+    eventList,
     props.event,
     props.event.event,
     props.event.date,
@@ -71,20 +72,20 @@ const NewEvent = (props) => {
 
   const handleCreateEvent = () => {
     if (props.event?.event) {
-      const idx = eventList.filter(
+      const newList = eventList.filter(
         (event) => event._id !== props.event.event.extendedProps._id,
       );
-      console.log(idx);
+      newList.push(event);
+      props.update(newList);
+    } else {
+      props.create({
+        ...event,
+        start: event.start,
+        end: event.end,
+      });
     }
-    props.create({
-      ...event,
-      start: event.start,
-      end: event.end,
-    });
     props.showPopup({});
   };
-
-  const handleEditEvent = (targetEvent) => {};
 
   const handleBackgroundPick = (e) => {
     setEvent({ ...event, backgroundColor: e.target.style.background });

@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useLayoutEffect } from "react";
 
 const Input = (props) => {
   const [defaultFields, setDefaultFields] = useState(props.defaultValue);
-  useEffect(() => {
+
+  useLayoutEffect(() => {
     setDefaultFields(props.defaultValue);
   }, [props.defaultValue]);
+
   return (
     <div
       style={{
@@ -32,7 +34,7 @@ const Input = (props) => {
         id={props.id}
         type={props.type}
         maxLength={props.id === "title" ? 30 : 120}
-        value={
+        defaultValue={
           props.id === "date"
             ? props.defaultValue.date
             : props.id === "time"

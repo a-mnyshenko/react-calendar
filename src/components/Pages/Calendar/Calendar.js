@@ -25,17 +25,10 @@ const Calendar = (props) => {
   }, [props.events]);
   return (
     <FullCalendar
-      dateClick={(e) => e.view.type === "dayGridMonth" && props.showPopup(e)}
+      dateClick={props.showPopup}
       eventLimit={true}
       eventClick={function(info) {
         props.showPopup(info);
-        console.log("Event: " + info.event.title);
-        console.log("Notes: " + info.event.extendedProps.description);
-        console.log(
-          "View: " + info.event.start.toLocaleDateString(),
-          info.event?.end?.toLocaleDateString() ||
-            info.event.start.toLocaleDateString(),
-        );
       }}
       displayEventTime={true}
       slotLabelFormat={[

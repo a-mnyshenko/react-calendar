@@ -12,8 +12,8 @@ const CalendarLayout = () => {
   });
 
   const showPopup = (date) => {
-    changeDisplayPopup(!displayPopup);
     setCell(date);
+    changeDisplayPopup(!displayPopup);
   };
 
   return (
