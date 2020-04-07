@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/static/css/main.876f05d6.chunk.css",
+    "main.js": "/static/js/main.982f9891.chunk.js",
+    "main.js.map": "/static/js/main.982f9891.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.158979ff.js",
+    "runtime-main.js.map": "/static/js/runtime-main.158979ff.js.map",
+    "static/js/2.8c8a48aa.chunk.js": "/static/js/2.8c8a48aa.chunk.js",
+    "static/js/2.8c8a48aa.chunk.js.map": "/static/js/2.8c8a48aa.chunk.js.map",
+    "static/css/3.fc1d31e8.chunk.css": "/static/css/3.fc1d31e8.chunk.css",
+    "static/js/3.a8a0ad2c.chunk.js": "/static/js/3.a8a0ad2c.chunk.js",
+    "static/js/3.a8a0ad2c.chunk.js.map": "/static/js/3.a8a0ad2c.chunk.js.map",
+    "static/css/4.806ac799.chunk.css": "/static/css/4.806ac799.chunk.css",
+    "static/js/4.cbd04b25.chunk.js": "/static/js/4.cbd04b25.chunk.js",
+    "static/js/4.cbd04b25.chunk.js.map": "/static/js/4.cbd04b25.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.a66e256c38b40dd2cec0773defe5ca9c.js": "/precache-manifest.a66e256c38b40dd2cec0773defe5ca9c.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/3.fc1d31e8.chunk.css.map": "/static/css/3.fc1d31e8.chunk.css.map",
+    "static/css/4.806ac799.chunk.css.map": "/static/css/4.806ac799.chunk.css.map",
+    "static/css/main.876f05d6.chunk.css.map": "/static/css/main.876f05d6.chunk.css.map",
+    "static/js/2.8c8a48aa.chunk.js.LICENSE.txt": "/static/js/2.8c8a48aa.chunk.js.LICENSE.txt",
+    "static/js/3.a8a0ad2c.chunk.js.LICENSE.txt": "/static/js/3.a8a0ad2c.chunk.js.LICENSE.txt",
+    "static/media/Divider.svg": "/static/media/Divider.976256de.svg",
+    "static/media/Path 26.svg": "/static/media/Path 26.e1ad04b9.svg",
+    "static/media/Path 3.svg": "/static/media/Path 3.efc440fc.svg",
+    "static/media/Path 9.svg": "/static/media/Path 9.d209a6bb.svg",
+    "static/media/Support Iocn.svg": "/static/media/Support Iocn.01d65968.svg",
+    "static/media/icon_search.svg": "/static/media/icon_search.9b15ce11.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.158979ff.js",
+    "static/js/2.8c8a48aa.chunk.js",
+    "static/css/main.876f05d6.chunk.css",
+    "static/js/main.982f9891.chunk.js"
+  ]
+}
