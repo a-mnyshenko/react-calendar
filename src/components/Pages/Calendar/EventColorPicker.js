@@ -10,6 +10,7 @@ const EventColorPicker = (props) => {
         borderRadius: "50%",
         marginLeft: "5px",
         background: color,
+        cursor: "pointer",
       }}
       onClick={props.background}
     />

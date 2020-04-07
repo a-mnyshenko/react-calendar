@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
@@ -15,12 +16,19 @@ import "@fullcalendar/timegrid/main.css";
 import "@fullcalendar/list/main.css";
 
 import "./style.css";
+import NewEvent from "./NewEvent";
 
 const Calendar = (props) => {
+  const [renderEvents, setRenderEvents] = useState(props.events);
+  useEffect(() => {
+    setRenderEvents(props.events);
+  }, [props.events]);
   return (
     <FullCalendar
       dateClick={(e) => e.view.type === "dayGridMonth" && props.showPopup(e)}
+      eventLimit={true}
       eventClick={function(info) {
+        props.showPopup(info);
         console.log("Event: " + info.event.title);
         console.log("Notes: " + info.event.extendedProps.description);
         console.log(
@@ -62,7 +70,7 @@ const Calendar = (props) => {
         listPlugin,
       ]}
       // selectable={true}
-      events={events}
+      events={renderEvents}
       nowIndicator={true}
       eventRender={function(list) {
         if (list.view.type === "listWeek") {
@@ -79,4 +87,8 @@ const Calendar = (props) => {
   );
 };
 
-export default Calendar;
+const mapStateToProps = (state) => ({
+  events: state.calendar,
+});
+
+export default connect(mapStateToProps)(Calendar);

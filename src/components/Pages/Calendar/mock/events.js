@@ -4,7 +4,7 @@ export const events = [
     // date: "2020-04-03T10:30:00",
     start: "2020-04-08T10:30:00Z",
     // end: "2020-04-04T07:30:00",
-    backgroundColor: "#blue",
+    backgroundColor: "rgb(59, 134, 255)",
     // borderColor: "#000",
     allDay: true,
     editable: true,
@@ -20,7 +20,7 @@ export const events = [
     editable: true,
     description:
       "lond text description for width flex block testing lond text description for width flex block testing!@#!@$",
-    backgroundColor: "blue",
+    backgroundColor: "rgb(59, 134, 255)",
   },
   {
     title: "1234567890123456789012345678901234567890",
@@ -29,7 +29,7 @@ export const events = [
     end: "2020-04-22T19:40",
     editable: true,
     description: "This is a cool eventsome note !!!",
-    backgroundColor: "blue",
+    backgroundColor: "rgb(59, 134, 255)",
   },
   {
     title: "123456789012345",
@@ -39,6 +39,6 @@ export const events = [
     allDay: true,
     editable: true,
     description: "lond text description for width flex b @!!",
-    backgroundColor: "blue",
+    backgroundColor: "rgb(59, 134, 255)",
   },
 ];

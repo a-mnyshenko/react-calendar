@@ -12,8 +12,9 @@ function App() {
         style={{
           display: "block",
           position: "absolute",
-          width: "100%",
-          maxWidth: "1170px",
+          width: "calc(100% - 95px - 75px - 260px)",
+          maxWidth: "100%",
+          minWidth: "768px",
           height: "100%",
           left: "260px",
           top: "70px",

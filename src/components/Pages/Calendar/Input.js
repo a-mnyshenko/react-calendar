@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const Input = (props) => {
+  const [defaultFields, setDefaultFields] = useState(props.defaultValue);
+  useEffect(() => {
+    setDefaultFields(props.defaultValue);
+  }, [props.defaultValue]);
   return (
     <div
       style={{
@@ -27,7 +31,18 @@ const Input = (props) => {
         onChange={(e) => props.handleSetEvent(e, props.id)}
         id={props.id}
         type={props.type}
-        defaultValue={props.defaultValue}
+        maxLength={props.id === "title" ? 30 : 120}
+        value={
+          props.id === "date"
+            ? props.defaultValue.date
+            : props.id === "time"
+            ? props.defaultValue.time
+            : props.id === "title"
+            ? props.defaultValue.title
+            : props.id === "description"
+            ? props.defaultValue.description
+            : ""
+        }
         style={{
           height: "16px",
           width: "100%",

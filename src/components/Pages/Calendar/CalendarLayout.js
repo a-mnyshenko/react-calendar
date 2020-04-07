@@ -19,8 +19,9 @@ const CalendarLayout = () => {
   return (
     <div
       style={{
-        position: "absolute",
-        width: "calc(100% - 95px)",
+        // position: "absolute",
+        width: "calc(100%)",
+        maxWidth: "1170px",
         paddingRight: "95px",
         paddingBottom: "103px",
       }}>

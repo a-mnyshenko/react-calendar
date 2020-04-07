@@ -25,4 +25,11 @@ export const inputFields = [
   },
 ];
 
-export const eventColors = ["blue", "green", "red", "pink", "yellow", "orange"];
+export const eventColors = [
+  "rgb(59, 134, 255)",
+  "green",
+  "red",
+  "pink",
+  "navy",
+  "orange",
+];

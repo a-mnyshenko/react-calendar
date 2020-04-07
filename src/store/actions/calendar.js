@@ -5,3 +5,11 @@ export const addEvent = (data) => {
     data,
   };
 };
+
+export const updateEvent = (data) => {
+  console.log("Updated event: ", data);
+  return {
+    type: "UPDATE_EVENT",
+    data,
+  };
+};

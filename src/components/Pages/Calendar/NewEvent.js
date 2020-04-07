@@ -6,35 +6,76 @@ import EventColorPicker from "./EventColorPicker";
 import moment from "moment";
 
 import { inputFields } from "./mock/inputFields";
-import { addEvent } from "../../../store/actions/calendar";
+import { addEvent, updateEvent } from "../../../store/actions/calendar";
 
 const NewEvent = (props) => {
+  const [eventList, setEventList] = useState(props.data);
   const [event, setEvent] = useState({});
   const [scroll, setScroll] = useState({
     x: window.scrollX,
     y: window.scrollY,
   });
 
+  const handleCreateUID = () => {
+    const chr4 = () =>
+      Math.random()
+        .toString(16)
+        .slice(-4);
+    return `${chr4()}-${chr4()}${chr4()}`;
+  };
+
   useEffect(() => {
-    setEvent({
-      title: props.event.title || "no title",
-      start: moment(props.event.date)
-        .set("hour", 13)
-        .set("minute", 0)
-        .format(),
-      end: moment(props.event.date)
-        .set("hour", 13)
-        .set("minute", 0)
-        .add(1, "h")
-        .format(),
-      background: "#blue",
-      editable: true,
-      allDay: true,
-      description: "",
-    });
-  }, [props.event.date, props.event.title, props.event.dateStr]);
+    props.event?.event
+      ? setEvent({
+          _id: props.event?.event?.extendedProps?._id,
+          title: props.event?.event?.title,
+          start: moment(props.event?.event?.start)
+            .set("hour", 13)
+            .set("minute", 0)
+            .format(),
+          end: moment(props.event?.event?.start)
+            .set("hour", 13)
+            .set("minute", 0)
+            .add(1, "h")
+            .format(),
+          backgroundColor: props.event?.event?.backgroundColor,
+          editable: true,
+          allDay: true,
+          description: props.event?.event?.extendedProps?.description,
+        })
+      : setEvent({
+          _id: props.event?.event?.extendedProps?._id || handleCreateUID(),
+          title: props.event.title || "No title",
+          start: moment(props.event.date)
+            .set("hour", 13)
+            .set("minute", 0)
+            .format(),
+          end: moment(props.event?.event?.start)
+            .set("hour", 13)
+            .set("minute", 0)
+            .add(1, "h")
+            .format(),
+          backgroundColor: props.event?.backgroundColor || "#blue",
+          editable: true,
+          allDay: true,
+          description: props.event?.extendedProps?.description || "",
+        });
+    // });
+  }, [
+    props.event,
+    props.event.event,
+    props.event.date,
+    props.event.title,
+    props,
+  ]);
 
   const handleCreateEvent = () => {
+    if (props.event?.event) {
+      const idx = eventList.filter(
+        (event) => event._id !== props.event.event.extendedProps._id,
+      );
+      console.log(idx);
+    }
     props.create({
       ...event,
       start: event.start,
@@ -43,15 +84,17 @@ const NewEvent = (props) => {
     props.showPopup({});
   };
 
+  const handleEditEvent = (targetEvent) => {};
+
   const handleBackgroundPick = (e) => {
-    console.log(e.target.style.background);
-    setEvent({ ...event, background: e.target.style.background });
+    setEvent({ ...event, backgroundColor: e.target.style.background });
   };
 
   const handleSetEvent = (e, id) => {
     const [hh, mm] =
-      (id === "time" && e.target.value.split(":")) ||
-      e.target.defaultValue.split(":");
+      id === "time"
+        ? e.target.value.split(":") || e.target.defaultValue.split(":")
+        : "13:00";
     id === "time"
       ? setEvent({
           ...event,
@@ -66,7 +109,18 @@ const NewEvent = (props) => {
             .format(),
         })
       : id === "date"
-      ? setEvent({ ...event })
+      ? setEvent({
+          ...event,
+          start: moment(e.target.value)
+            .set("hour", hh)
+            .set("minute", mm)
+            .format(),
+          end: moment(e.target.value)
+            .set("hour", hh)
+            .set("minute", mm)
+            .add(1, "h")
+            .format(),
+        })
       : setEvent({ ...event, [id]: e.target.value });
   };
 
@@ -100,6 +154,8 @@ const NewEvent = (props) => {
             top: "7px",
             border: "2px solid #D6D6D6",
             borderRadius: "50%",
+            cursor: "pointer",
+            zIndex: "100",
           }}>
           <span
             style={{
@@ -144,13 +200,16 @@ const NewEvent = (props) => {
               id={input.id}
               type={input.type}
               inputName={input.inputName}
-              defaultValue={
-                input.id === "date"
-                  ? props.event.dateStr
-                  : input.id === "time"
-                  ? "13:00"
-                  : ""
-              }
+              defaultValue={{
+                date: props.event?.event?.start
+                  ? moment(props.event?.event?.start).format("YYYY-MM-DD")
+                  : moment(props.event.date).format("YYYY-MM-DD"),
+                time: props.event?.event?.start
+                  ? moment(props.event?.event?.start).format("H:mm")
+                  : "13:00",
+                title: props.event?.event?.title,
+                description: props.event?.event?.extendedProps?.description,
+              }}
             />
           ))}
           <div
@@ -204,6 +263,7 @@ const NewEvent = (props) => {
 };
 const mapDispatchToProps = (dispatch) => ({
   create: (data) => dispatch(addEvent(data)),
+  update: (data) => dispatch(updateEvent(data)),
 });
 const mapStateToProps = (state) => ({
   data: state.calendar,

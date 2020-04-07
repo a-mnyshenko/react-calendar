@@ -14,6 +14,22 @@
 .fc-day-top {
   color: #43425d;
 }
+.fc-event {
+  border: none;
+}
+.fc-title {
+  border: none !important;
+  line-height: 2.2 !important;
+}
+2 div.fc-content {
+  border: none;
+}
+a.fc-day-grid-event.fc-h-even.fc-even.fc-star.fc-en.fc-draggable {
+  border: none;
+}
+td.fc-event-container {
+  border: none !important;
+}
 .fc-right .fc-button-group {
   margin-top: -90px;
 }
@@ -51,8 +67,8 @@ hr {
   padding-right: 0;
 }
 .fc-list-item .fc-list-item-title {
-  min-width: 268px;
-  max-width: 268px;
+  min-width: 224px;
+  max-width: 224px;
 }
 .fc-list-item .fc-list-item-description {
   width: 100%;
