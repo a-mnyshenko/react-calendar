@@ -29,18 +29,9 @@ const NewEvent = (props) => {
       ? setEvent({
           _id: props.event?.event?.extendedProps?._id,
           title: props.event?.event?.title,
-          start: moment(props.event?.event?.start)
-            .set("hour", 13)
-            .set("minute", 0)
-            .format(),
-          end: moment(props.event?.event?.start)
-            .set("hour", 13)
-            .set("minute", 0)
-            .add(1, "h")
-            .format(),
+          start: moment(props.event?.event?.start),
+          end: moment(props.event?.event?.start),
           backgroundColor: props.event?.event?.backgroundColor,
-          editable: true,
-          allDay: true,
           description: props.event?.event?.extendedProps?.description,
         })
       : setEvent({
@@ -56,8 +47,6 @@ const NewEvent = (props) => {
             .add(1, "h")
             .format(),
           backgroundColor: props.event?.backgroundColor || "#blue",
-          editable: true,
-          allDay: true,
           description: props.event?.extendedProps?.description || "",
         });
     // });
