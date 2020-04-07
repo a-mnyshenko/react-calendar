@@ -4,6 +4,7 @@ import { eventColors } from "./mock/inputFields";
 const EventColorPicker = (props) => {
   return eventColors.map((color) => (
     <div
+      key={color}
       style={{
         height: "20px",
         width: "20px",

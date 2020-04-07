@@ -6,10 +6,6 @@ import NewEvent from "./NewEvent";
 const CalendarLayout = () => {
   const [displayPopup, changeDisplayPopup] = useState(false);
   const [cell, setCell] = useState({});
-  const [coords, setCoords] = useState({
-    x: window.scrollX,
-    y: window.scrollY,
-  });
 
   const showPopup = (date) => {
     setCell(date);

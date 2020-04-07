@@ -36,13 +36,13 @@ const Input = (props) => {
         maxLength={props.id === "title" ? 30 : 120}
         defaultValue={
           props.id === "date"
-            ? props.defaultValue.date
+            ? defaultFields.date
             : props.id === "time"
-            ? props.defaultValue.time
+            ? defaultFields.time
             : props.id === "title"
-            ? props.defaultValue.title
+            ? defaultFields.title
             : props.id === "description"
-            ? props.defaultValue.description
+            ? defaultFields.description
             : ""
         }
         style={{

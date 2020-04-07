@@ -9,9 +9,9 @@ import { inputFields } from "./mock/inputFields";
 import { addEvent, updateEvent } from "../../../store/actions/calendar";
 
 const NewEvent = (props) => {
-  const [eventList, setEventList] = useState(props.data);
+  const [eventList] = useState(props.data);
   const [event, setEvent] = useState({});
-  const [scroll, setScroll] = useState({
+  const [scroll] = useState({
     x: window.scrollX,
     y: window.scrollY,
   });
@@ -197,6 +197,7 @@ const NewEvent = (props) => {
           }}>
           {inputFields.map((input) => (
             <Input
+              key={input.id}
               handleSetEvent={handleSetEvent}
               id={input.id}
               type={input.type}

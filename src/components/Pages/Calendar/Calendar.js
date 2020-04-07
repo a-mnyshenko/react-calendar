@@ -8,15 +8,12 @@ import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from "@fullcalendar/list";
 import momentPlugin from "@fullcalendar/moment";
 
-import { events } from "./mock/events";
-
 import "@fullcalendar/core/main.css";
 import "@fullcalendar/daygrid/main.css";
 import "@fullcalendar/timegrid/main.css";
 import "@fullcalendar/list/main.css";
 
 import "./style.css";
-import NewEvent from "./NewEvent";
 
 const Calendar = (props) => {
   const [renderEvents, setRenderEvents] = useState(props.events);
